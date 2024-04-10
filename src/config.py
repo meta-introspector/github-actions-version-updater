@@ -70,7 +70,7 @@ class Configuration(BaseSettings):
     """Configuration class for GitHub Actions Version Updater"""
 
     token: str = Field(min_length=10)
-    pull_request_branch: str = Field(min_length=1)
+    pull_request_branch: str = Field(min_length=1, default="")
     skip_pull_request: bool = False
     force_push: bool = False
     committer_username: str = Field(min_length=1, default="github-actions[bot]")
