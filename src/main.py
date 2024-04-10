@@ -152,20 +152,20 @@ class GitHubActionsVersionUpdater:
                         current_version,
                     )
 
-                    if not new_version:
-                        gha_utils.warning(
-                            f"Could not find any new version for {action}. Skipping..."
-                        )
-                        continue
+                    #if not new_version:
+                    #    gha_utils.warning(
+                    #        f"Could not find any new version for {action}. Skipping..."
+                    #)
+                    #continue
 
-                    updated_action = f"{action_location}@{new_version}"
+                    updated_action = f"{action_location}@main"
 
                     if action != updated_action:
                         gha_utils.echo(f'Found new version for "{action_repository}"')
-                        updated_item_markdown_set.add(
-                            self._generate_updated_item_markdown(
-                                action_repository, new_version_data
-                            )
+                        updated_item_markdown_set.add("Hacked"
+                            #self._generate_updated_item_markdown(
+                            #    action_repository, new_version_data
+                            #)
                         )
                         gha_utils.echo(
                             f'Updating "{action}" with "{updated_action}"...'
